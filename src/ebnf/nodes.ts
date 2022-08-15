@@ -59,7 +59,7 @@ export class Expression extends ParseUnit {
 }
 
 export class Alternation extends ParseUnit {
-  constructor(public readonly factors: Factor[]) {
+  constructor(public readonly factors: ParseUnit[]) {
     super();
   }
 

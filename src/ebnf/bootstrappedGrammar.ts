@@ -61,30 +61,26 @@ export const ebnfGrammar: Grammar = {
   ]),
   identifier: new Expression([
     new Identifier('letter'),
-    new Repetition(new Expression([new Identifier('letter')])),
+    new Repetition(new Identifier('letter')),
   ]),
   terminal: new Alternation([
-    new Group(
-      new Expression([
-        new Terminal("'"),
-        new Identifier('character'),
-        new Terminal("'"),
-      ])
-    ),
-    new Group(
-      new Expression([
-        new Terminal('"'),
-        new Identifier('character'),
-        new Terminal('"'),
-      ])
-    ),
+    new Expression([
+      new Terminal("'"),
+      new Identifier('character'),
+      new Terminal("'"),
+    ]),
+    new Expression([
+      new Terminal('"'),
+      new Identifier('character'),
+      new Terminal('"'),
+    ]),
   ]),
   character: new Alternation([
     new Identifier('letter'),
     ...'=\n|[]{}(),"\''.split('').map(character => new Terminal(character)),
   ]),
   letter: new Alternation(
-    'abcdefghijklmnopqrstuvwxyz'
+    'abcdefghijklmnopqrstuvwxyz0123456789'
       .split('')
       .map(character => new Terminal(character))
   ),

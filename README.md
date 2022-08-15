@@ -3,6 +3,8 @@ Self-parsing EBNF
 
 This project is a learning tool to help people learn more about parsing. The primary example showcased in this project is a hand-written abstract syntax tree (AST) for EBNF that is capable of parsing an EBNF describing EBNF into the identical AST.
 
+Slides for the corresponding talk: https://pl.anthony.ai
+
 ## Example
 
 Here's an example EBNF describing EBNF:
